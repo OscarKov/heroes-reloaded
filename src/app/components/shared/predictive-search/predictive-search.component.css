@@ -1,0 +1,13 @@
+.search_dropdown {
+  z-index: 100;
+  transition: 200ms ease-in;
+}
+
+.list_tile {
+  cursor: pointer;
+  transition: 200ms ease-in;
+}
+
+.list_tile:hover {
+  background-color: #d8d8d8;
+}

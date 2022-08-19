@@ -1,0 +1,18 @@
+<form class="d-flex" role="search">
+    <input [ngModel]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchValueChange($event)"
+        class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="button">Search</button>
+</form>
+<div *ngIf="searchValue !== ''" class="search_dropdown position-absolute start-0 end-0 overflow-hidden bg-light shadow rounded-bottom">
+    <div class="container">
+        <div class="row px-2">{{resultList.length === 0 ? "Sin resultados" : "Resultados:"}}</div>
+        <div *ngFor="let hero of resultList" class="list_tile row py-1" (click)="onHeroSelect(hero)">
+            <div class="col-3">
+                <img width="40px" [src]="hero.img" alt="" srcset="">
+            </div>
+            <div class="col-9">
+                <span>{{ hero.nombre }}</span>
+            </div>
+        </div>
+    </div>
+</div>
